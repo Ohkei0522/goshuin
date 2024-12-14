@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>shirushiatume</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <header>
+    <div class="logo">
+    <h1>Goshuin collection</h1>
+    </div>
+    <div class="header-list">
+     <ul>
+      <% if user_signed_in? %>
+       <li><%= link_to 'log out', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+       <li><%= link_to "Sign up", new_user_registration_path %></li>
+       <li><%= link_to "log in", new_user_session_path %></li>
+      <% end %>
+     </ul>
+    </div>
+   </header>
+   <main>
+    <%= yield %>
+   </main>
+   <footer>
+      <p>Copyright © Ohkei All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

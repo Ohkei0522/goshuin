@@ -1,0 +1,2 @@
+class Conp < ApplicationRecord
+end

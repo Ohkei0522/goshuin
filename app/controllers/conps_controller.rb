@@ -1,0 +1,2 @@
+class ConpsController < ApplicationController
+end

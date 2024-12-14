@@ -1,0 +1,63 @@
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+
+<div class="posts-container">
+<h3>collection list</h3>
+  <% @posts.each do |t| %>
+    <div class="post">
+     <%= t.created_at %>
+      <%= link_to "-詳細-detail", post_path(t.id) %>
+      <%= link_to "-編集-edit", edit_post_path(t.id) %>
+      <%= link_to "-削除-delete", post_path(t.id), method: :delete %>
+
+     <% if t.image.attached? %>
+              <%= image_tag t.image, size: '250x200'%>
+     <% end %>
+     <%= t.name %>
+     <%= t.price %>
+     <%= t.address %>
+
+     <% if user_signed_in? %>
+        <% if current_user.already_liked?(t) %>
+            <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+                <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+        <% else %>
+            <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+                <i class="far fa-heart"></i><%= t.likes.count %>
+            <% end %>
+        <% end %>
+     <% else %>
+        <i class="far fa-heart"></i><%= t.likes.count %>
+     <% end %>
+      
+    </div>
+
+    <% end %>
+
+ <%= link_to "New post", new_post_path,class:"new-post-link" %>
+   
+<%= form_tag({controller: "posts", action: "index"}, method: :get, class: "tag-form") do %>
+  <div class="tags-container">
+    <% Tag.all.each do |t| %>
+      <label class="tag-item">
+        <%= check_box_tag "tag_ids[]", t.id, false, class: "tag-checkbox" %>
+        <%= t.name %>
+      </label>
+    <% end %>
+  </div>
+  <%= submit_tag "検索", class: "tag-submit" %>
+<% end %>
+
+<%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+    <%= text_field_tag :tag %>
+    <%= submit_tag 'タグを追加' %>
+<% end %>
+
+<h3>素敵な印を探そう！</h3>
+<%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag 'search'  %>
+<% end %>
+
+</div>

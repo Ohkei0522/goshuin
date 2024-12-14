@@ -1,0 +1,60 @@
+<h1>集めた印を投稿して自分だけの御朱印帳をここに作っちゃおう！</h1>
+<h2>Post the stamps you collect and create your own goshuin collection!</h2>
+<%= form_for @post do |f| %>
+
+<%= stylesheet_link_tag 'new', :media => "all" %>
+
+<div class="post-container">
+  <p class="title"> post </p>  
+  <%= form_for(@post, :url => { controller:'posts', action:'create'})do |f| %>
+  <%= f.label :point %>
+      <br>
+      <%= f.text_field :body,size: 140%>
+      <br>
+  <% end %>
+
+  <%= form_for(@post, :url => { controller:'posts', action:'create'})do |f| %>
+  <%= f.label :name %>
+      <br>
+      <%= f.text_field :body,size: 140%>
+      <br>
+  <% end %>
+
+  <%= form_for(@post, :url => { controller:'posts', action:'create'})do |f| %>
+  <%= f.label :address %>
+      <br>
+      <%= f.text_field :body,size: 140%>
+      <br>
+  <% end %>
+
+  <%= form_for(@post, :url => { controller:'posts', action:'create'})do |f| %>
+  <%= f.label :price %>
+      <br>
+      <%= f.text_field :body,size: 140%>
+      <br>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :写真 %>
+  </div>
+ 
+  
+ <div class="tags-container">
+  <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+    <div class="tag-item">
+      <%= tag.label class: 'form-check-label' do %>
+        <%= tag.check_box class: 'tag-checkbox' %>
+        <%= tag.text %>
+      <% end %>
+    </div>
+  <% end %>
+ </div>
+
+<%= f.submit "exhibit", class: "tag-submit" %>
+
+</div>
+<% end %>
+
+<%= link_to "一覧に戻る", posts_path %>
+

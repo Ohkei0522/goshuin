@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ * {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','Cambria','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+    background-image: url("5d3e6234c3eab5203aad1df111f90f5d.png");
+    background-size: cover; 
+    }
+
+  header {
+    background-color: #dd898d;
+    height: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .logo {
+    flex: 1; 
+  }
+  header a {
+    color: #F7F2E0; 
+    text-decoration: none; 
+  }
+  header h1 {
+    color: #F7F2E0;
+    margin-left: 0px;
+    font-size: 32px;
+  }
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    list-style: none;
+    margin-right: 40px;
+  }
+  footer {
+    color: #F5ECCE;
+    height: 30px;
+    background-color: #3938388b;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: flex-end;
+  }

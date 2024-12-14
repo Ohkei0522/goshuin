@@ -1,0 +1,86 @@
+h1 {
+  font-size: 24px;
+  color: #A4A4A4;
+  width: 1000px;
+  padding-top: 40px ;
+  margin:0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  color: #A4A4A4;
+  width: 1000px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.post-container {
+    margin: 50px auto;
+    width: 70%;
+    border: solid #FBF2EF;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #FBF2EF;
+  }
+  .title {
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-size: 32px;
+  }
+  input[type="text"] {
+    margin-bottom: 3%;
+    width: 60%;
+    height: 40px;
+  }
+  input[type="submit"] {
+    width: 150px;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #FBF2EF;
+    background-color: #2E2E2E
+  }
+  
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap; /* 要素が多い場合、折り返す */
+    gap: 10px; /* 各タグ間の余白 */
+    margin: 10px 0;
+    padding: 20px 0;
+    list-style-type: none; /* 点を削除 */
+  }
+  
+  /* 個々のタグ */
+  .tag-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 5px solid #c8d6ba; /* 枠線 */
+    border-radius: 5px; /* 角丸 */
+    background-color: #f9f9f9;
+    cursor: pointer; /* ポインタの形状をクリック可能に変更 */
+  }
+  
+  /* チェックボックスの非表示 */
+  .tag-checkbox {
+    margin-right: 5px; /* ラベルとの間隔 */
+    accent-color: #edccc7 /* チェックボックスの色を変更 */
+  }
+  
+  /* タグ追加ボタン */
+  .tag-submit {
+    margin: 0px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #edccc7;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .tag-submit:hover {
+    background-color: #d59ea1; /* ボタンのホバー時の色 */
+  }
+  
